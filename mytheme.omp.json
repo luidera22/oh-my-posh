@@ -1,0 +1,77 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "palette": {
+        "os": "#ACB0BE",
+        "closer": "p:os",
+        "icones": "#D8DEE9",
+        "main": "#8AADF4",
+        "texto":  "#81A1C1",
+        "horario": "#EBCB8B",
+        "admin": "#BF616A"
+  },
+  "blocks": [
+    {
+      "alignment": "left",
+      "segments": [
+        {
+          "foreground": "p:horario",
+          "properties": {
+            "time_format": "15:04:05"
+          },
+          "style": "plain",
+          "template": "{{ .CurrentDate | date .Format }} ",
+          "type": "time"
+        },
+        {
+          "foreground": "p:os",
+          "style": "plain",
+          "template": "{{.Icon}}",
+          "type": "os"
+        },
+        {
+          "//foreground": "p:horario",
+          "//style": "plain",
+          "//template": " user",
+          "//type": "session"
+        },
+        {
+          "foreground": "p:texto",
+          "properties": {
+            "style": "full",
+            "home_icon": "\\"
+          },
+          "style": "plain",
+          "template": " {{ .Path }}",
+          "type": "path"
+        },
+        {
+          "foreground": "p:main",
+          "properties": {
+            "branch_icon": " \ue725 ",
+            "cherry_pick_icon": " \ue29b ",
+            "commit_icon": " \uf417 ",
+            "fetch_status": false,
+            "fetch_upstream_icon": false,
+            "merge_icon": " \ue727 ",
+            "no_commits_icon": " \uf0c3 ",
+            "rebase_icon": " \ue728 ",
+            "revert_icon": " \uf0e2 ",
+            "tag_icon": " \uf412 "
+          },
+          "template": "{{ .HEAD }}",
+          "style": "plain",
+          "type": "git"
+        },
+        {
+          "style": "plain",
+          "foreground": "p:texto",
+          "template": " \uf105",
+          "type": "text"
+        }
+      ],
+      "type": "prompt"
+    }
+  ],
+  "final_space": true,
+  "version": 2
+}
